@@ -19,7 +19,7 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'tomagotchi',
+      title: 'isstracker',
       template: './src/index.html',
       inject: 'head'
     })
