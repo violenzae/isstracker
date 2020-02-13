@@ -9,13 +9,16 @@
 </head>
 
 <body class="container">
-  <div>
+  <div class="panel panel-default">
+    <h1>ISS Relative Position Tracker</h1>
     <form id="addressForm">
+      <label for="address">Enter your address:</label>
       <input type="text" id="address">
       <button type="submit">Submit</button>
     </form>
-    <div id="map"></div>
-    <div class="output"></div>
+    <div id="map"></div>    
+    <div id="distance"></div>
+    <div class="output" id="error"></div>
   </div>
 </body>
 
