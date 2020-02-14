@@ -1,7 +1,19 @@
 body {
   text-align: center;
+  background-image: url("assets/images/blue.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  ;
 }
 
 .panel {
   margin-top: 15%;
+  padding: 5%;
+  background-image: radial-gradient(rgba(76, 111, 207, 0.616) 0%, transparent 100%);
+  border-radius: 50%;
+  color: #8caafc
+}
+
+html{
+  height: 100%;
 }

@@ -15,13 +15,13 @@ module.exports = {
     contentBase: './dist'
   },
   plugins: [
-    new Dotenv(),
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(),
+    new Dotenv(),
     new HtmlWebpackPlugin({
-      title: 'isstracker',
+      title: '',
       template: './src/index.html',
-      inject: 'head'
+      inject: 'body'
     })
   ],
   module: {
@@ -34,28 +34,31 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jp(e*)g|svg)$/,
-        use: [{
-            loader: 'url-loader',
-            options: {
-                limit: 8000,
-                name: 'images/[hash]-[name].[ext]'
-            }
-        }]
+        test: /\.js$/,
+        exclude: [
+            /node_modules/,
+            /spec/
+          ],
+        loader: "eslint-loader"
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(gif|png|jpe?g)$/,
         use: [
           {
             loader: 'file-loader',
-          },
-        ],
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/images/'
+            }
+          }
+        ]
       },
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader"
-      }
+        test:/\.html$/,
+        use: [
+          'html-loader'
+        ]
+      },
     ]
   }
 };
