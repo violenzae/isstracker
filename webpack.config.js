@@ -8,7 +8,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'build')
   },
   devtool: 'eval-source-map',
   devServer: {
@@ -20,7 +20,7 @@ module.exports = {
     new Dotenv(),
     new HtmlWebpackPlugin({
       title: '',
-      template: './src/index.html',
+      template: './build/index.html',
       inject: 'body'
     })
   ],
